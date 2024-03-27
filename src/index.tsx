@@ -1,8 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
+import styles from "./index.module.less";
 
 const App = () => {
-  return <div>initialPages</div>;
+  return <div className={styles.main}>initialPages</div>;
 };
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const rootNode = document.getElementById("root");
+
+if (rootNode) {
+  const root = createRoot(rootNode);
+  root.render(<App />);
+}
